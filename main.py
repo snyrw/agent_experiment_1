@@ -47,6 +47,7 @@ MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"   # fits in ~16 GB bfloat16
 
 HOOK_NAMES = [
     f"blocks.{i}.hook_resid_post" for i in range(0, 32, 4)  # every 4th layer
+    # note: Claude keeps messing up the new API for TransformerLens, too lazy to change
 ]
 
 RESULTS_DIR = Path("results")
