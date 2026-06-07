@@ -108,7 +108,6 @@ def load_model():
     model = TransformerBridge.boot_transformers(
         MODEL_ID,
         dtype=torch.bfloat16,
-        token=os.environ.get("HF_TOKEN"),
     )
     model.eval()
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, token=os.environ.get("HF_TOKEN"))
