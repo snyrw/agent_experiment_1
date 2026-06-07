@@ -1,4 +1,8 @@
-# Agent Interpretability Experiment — Scheming Probe
+*The below was written by Claude. Take a lot of this with a grain of salt, as it may be misrepresenting research ideas and technical details when it comes to code.*
+
+---
+
+# Agent Interpretability Experiment #1
 
 Exploratory research into whether a linear probe trained on residual stream activations can detect "scheming" behavior in a language model — and whether subtracting that direction causally changes the model's output.
 
