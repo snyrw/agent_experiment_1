@@ -1,6 +1,6 @@
 # Agent Interpretability Experiment — Scheming Probe
 
-Exploratory (vibe-coded) research into whether a linear probe trained on residual stream activations can detect "scheming" behavior in a language model — and whether subtracting that direction causally changes the model's output.
+Exploratory research into whether a linear probe trained on residual stream activations can detect "scheming" behavior in a language model — and whether subtracting that direction causally changes the model's output.
 
 Llama 3.1 8B Instruct is the target model due to size, and a lot of this is basically just a skeleton for the time being. I also don't really know well Llama can be used for this task either, so keep that in mind as well.
 
@@ -16,7 +16,7 @@ The mechanistic question this project explores: does the model's residual stream
 
 ## Experiment stages
 
-1. **Collect activations** — run the model on paired scheming/honest scenarios, capturing `hook_resid_post` at the decision token across every layer (note: this isn't use in TL 3.0 and Claude wrote this for no reason; will need to check the API later).
+1. **Collect activations** — run the model on paired scheming/honest scenarios, capturing `hook_resid_post` at the decision token across every layer (note: this isn't used in TL 3.0 and Claude wrote this for no reason; will need to check the API later).
 2. **Train a linear probe** — logistic regression on those activations to classify scheming vs. honest runs.
 3. **Layer sweep** — find which layer carries the most signal.
 4. **Causal steering test** — subtract the probe direction during generation and check if the scheming behavior changes.
